@@ -5,14 +5,12 @@ on:
   pull_request:
   workflow_dispatch:
 jobs:
-# Update 'Job name' and 'working_directory' as needed based on the module structure.
-  complete-example:
+  peering_in_same_subscription-example:
     uses: clouddrove/github-shared-workflows/.github/workflows/tf-checks.yml@master
     with:
-      working_directory: './examples/complete/'
-  
-# Seperate Job for TFlint workflow call
-  tf-lint:
-    uses: clouddrove/github-shared-workflows/.github/workflows/tf-lint.yml@master
-    secrets:
-      GITHUB: ${{ secrets.GITHUB }}
+      working_directory: './examples/peering_in_same_subscription/'
+
+  peering_in_diff_subscription-example:
+    uses: clouddrove/github-shared-workflows/.github/workflows/tf-checks.yml@master
+    with:
+      working_directory: './examples/peering_in_diff_subscription/'

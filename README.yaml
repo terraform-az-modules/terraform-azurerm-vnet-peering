@@ -5,45 +5,65 @@
 #
 
 # Name of this project
-name : Terraform Azure Module Template
+name : Terraform AZURE VNET-PEERING
 
 # License of this project
 license: "APACHE"
 
 # Canonical GitHub repo
-github_repo: terraform-az-modules/terraform-module-template
+github_repo: clouddrove/terraform-azure-vnet-peering
 
 # Badges to display
 badges:
   - name: "Terraform"
-    image: "https://img.shields.io/badge/Terraform-v0.13-green"
+    image: "https://img.shields.io/badge/Terraform-v1.1.7-green"
     url: "https://www.terraform.io"
   - name: "Licence"
     image: "https://img.shields.io/badge/License-APACHE-blue.svg"
     url: "LICENSE.md"
-  - name: "Changelog"
-    image: "https://img.shields.io/badge/Changelog-blue"
-    url: "CHANGELOG.md"
-
-# Prerequesties to display
-prerequesties:
-  - name: Terraform
-    url: https://learn.hashicorp.com/terraform/getting-started/install.html
-    version: ">= 1.6.6"
-
-providers:
-  - name: azure
-    url: https://azure.microsoft.com/
-    version: ">= 3.116.0"
 
 #  description of this project
 description: |-
-  Terraform Azure Module Template to create new modules using this as baseline
+  Terraform module to create vnet-peering resource on AZURE.
+# extra content
+include:
+  - "terraform.md"
 
 # How to use this project
 # How to use this project
 usage: |-
   Here are some examples of how you can use this module in your inventory structure:
+  ### Default vnet-peering
   ```hcl
-    locals {}
-    ```
+  module "vnet_peering" {
+   source                        = "clouddrove/vnet-peering/azure"
+   version                       = "1.0.0"
+   enabled_peering               = true
+   resource_group_1_name         = module.resource_group_1.resource_group_name
+   resource_group_2_name         = module.resource_group_2.resource_group_name
+
+   different_rg                  = true
+   vnet_1_name                   = module.vnet.vnet_name[0]
+   vnet_1_id                     = module.vnet.vnet_id[0]
+   vnet_2_name                   = module.vnet_remote.vnet_name[0]
+   vnet_2_id                     = module.vnet_remote.vnet_id[0]
+  }
+   ```
+
+    ### vnet-peering in different subscription
+  ```hcl
+  module "vnet_peering" {
+   source                        = "clouddrove/vnet-peering/azure"
+   version                       = "1.0.0"
+   enabled_diff_subs_peering     = true
+   resource_group_1_name         = module.resource_group_1.resource_group_name
+   diff_subs_resource_group_name = data.azurerm_resource_group.peer-rg.name
+
+   alias_subs_id                 = "82XXXXXXXXXXXXXXXXXXXXa80"
+   vnet_1_name                   = module.vnet.vnet_name[0]
+   vnet_1_id                     = module.vnet.vnet_id[0]
+   vnet_diff_subs_name           = data.azurerm_virtual_network.peer-staging-vnet.name
+   vnet_diff_subs_id             = data.azurerm_virtual_network.peer-staging-vnet.id
+  }
+   ```
+

@@ -6,11 +6,20 @@ on:
 
 jobs:
 # Update 'Job name' and 'terraform_directory' as needed based on the module structure.
-  complete-example:
+  peering_in_diff_subscription:
     uses: clouddrove/github-shared-workflows/.github/workflows/tf-pr-checks.yaml@master
     with:
       provider: 'azurerm'
-      terraform_directory: 'examples/complete'
+      terraform_directory: 'examples/peering_in_diff_subscription'
+      target_branch: 'master'
+    secrets:
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+  peering_in_same_subscription:
+    uses: clouddrove/github-shared-workflows/.github/workflows/tf-pr-checks.yaml@master
+    with:
+      provider: 'azurerm'
+      terraform_directory: 'examples/peering_in_same_subscription'
       target_branch: 'master'
     secrets:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}

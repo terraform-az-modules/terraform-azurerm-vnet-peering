@@ -8,9 +8,8 @@ terraform {
 terraform {
   required_providers {
     azurerm = {
-      source                = "hashicorp/azurerm"
-      configuration_aliases = [azurerm.peer]
-      version               = ">= 3.116.0"
+      source  = "hashicorp/azurerm"
+      version = ">=3.116.0"
     }
   }
 }
