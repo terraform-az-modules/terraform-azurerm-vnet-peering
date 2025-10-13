@@ -21,7 +21,7 @@ locals {
 ##-----------------------------------------------------------------------------
 module "resource_group" {
   source      = "terraform-az-modules/resource-group/azure"
-  version     = "1.0.0"
+  version     = "1.0.1"
   name        = local.name
   environment = local.environment
   label_order = local.label_order
@@ -33,7 +33,7 @@ module "resource_group" {
 ##-----------------------------------------------------------------------------
 module "vnet" {
   source              = "terraform-az-modules/vnet/azure"
-  version             = "1.0.0"
+  version             = "1.0.1"
   name                = local.name
   environment         = local.environment
   label_order         = local.label_order
