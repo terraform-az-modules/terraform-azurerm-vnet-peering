@@ -120,12 +120,6 @@ variable "vnet_diff_subs_name" {
   description = "The name of the remote virtual network."
 }
 
-variable "alias_subs_id" {
-  type        = string
-  default     = ""
-  description = "Alias for remote provider in module."
-}
-
 variable "diff_subs_resource_group_name" {
   type        = string
   default     = ""
