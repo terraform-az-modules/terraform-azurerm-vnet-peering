@@ -13,8 +13,8 @@ provider "azurerm" {
 ## Resource Group module call
 ##-----------------------------------------------------------------------------
 module "resource_group_1" {
-  source      = "terraform-az-modules/resource-group/azure"
-  version     = "1.0.0"
+  source      = "terraform-az-modules/resource-group/azurerm"
+  version     = "1.0.3"
   name        = "app1"
   environment = "test"
   label_order = ["name", "environment", "location"]
@@ -25,8 +25,8 @@ module "resource_group_1" {
 ## Resource Group module call - remote
 ##-----------------------------------------------------------------------------
 module "resource_group_2" {
-  source      = "terraform-az-modules/resource-group/azure"
-  version     = "1.0.0"
+  source      = "terraform-az-modules/resource-group/azurerm"
+  version     = "1.0.3"
   name        = "app2"
   environment = "test"
   label_order = ["name", "environment", "location"]
@@ -37,8 +37,8 @@ module "resource_group_2" {
 ## Virtual Network module call.
 ##-----------------------------------------------------------------------------
 module "vnet" {
-  source              = "terraform-az-modules/vnet/azure"
-  version             = "1.0.0"
+  source              = "terraform-az-modules/vnet/azurerm"
+  version             = "1.0.3"
   name                = "app"
   environment         = "test"
   resource_group_name = module.resource_group_1.resource_group_name
@@ -50,8 +50,8 @@ module "vnet" {
 ## Virtual Network module call - remote.
 ##-----------------------------------------------------------------------------
 module "vnet_remote" {
-  source              = "terraform-az-modules/vnet/azure"
-  version             = "1.0.0"
+  source              = "terraform-az-modules/vnet/azurerm"
+  version             = "1.0.3"
   name                = "remote"
   environment         = "test"
   resource_group_name = module.resource_group_2.resource_group_name
