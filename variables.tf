@@ -110,9 +110,9 @@ variable "different_rg" {
 }
 
 variable "enabled_diff_subs_peering" {
-  description = "Enables or disables peering between virtual networks in different subscriptions. Set to true to allow peering."
-  type    = bool
-  default = false
+  description = "Flag to enable/disable d Diff Subs Peering"
+  type        = bool
+  default     = false
 }
 
 variable "vnet_diff_subs_name" {
