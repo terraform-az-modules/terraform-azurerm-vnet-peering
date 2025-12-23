@@ -5,7 +5,7 @@ provider "azurerm" {
 
 provider "azurerm" {
   features {}
-  alias           = "peer"
+  alias = "peer"
   # subscription_id = "" #change this to other subscription if dns hosted in other subscription.
 }
 

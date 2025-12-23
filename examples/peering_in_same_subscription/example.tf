@@ -1,11 +1,11 @@
 provider "azurerm" {
   features {}
-   # subscription_id = ""
+  # subscription_id = ""
 }
 
 provider "azurerm" {
   features {}
-  alias           = "peer"
+  alias = "peer"
   # subscription_id = "" #change this to other subscription if dns hosted in other subscription.
 }
 
