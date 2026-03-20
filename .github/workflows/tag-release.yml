@@ -3,7 +3,7 @@ name: Tag Release
 on:
   pull_request:
     types: [closed]
-    
+
 # 👇 The caller must grant write perms to push tags
 permissions:
   contents: write        # allows creating/pushing tags
