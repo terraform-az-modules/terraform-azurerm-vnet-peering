@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.1] - 2026-09-22
+### :bug: Bug Fixes
+- [`e9cf322`](https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/commit/e9cf3224f4acab008bd7cedd511a7ff2c8063967) - declare azurerm.peer as a configuration alias *(PR [#24](https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/pull/24) by [@dverma-cd](https://github.com/dverma-cd))*
+  - :arrow_lower_right: *fixes issue [#23](https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/issues/23) opened by [@dverma-cd](https://github.com/dverma-cd)*
+
+### :wrench: Chores
+- [`58b2431`](https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/commit/58b243120e6fde060dfa0c1dc34fb4c0f1a43bce) - **deps**: bump actions/checkout from 6 to 7 *(commit by [@dependabot[bot]](https://github.com/apps/dependabot))*
+
+
 ## [v2.0.0] - 2026-04-22
 ### :bug: Bug Fixes
 - [`9353fac`](https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/commit/9353facbbbf732e1eb22b643b6aae706cd56ad97) - consolidate versions.tf, remove provider_meta, upgrade to azurerm >= 4.0 *(commit by [@anmolnagpal](https://github.com/anmolnagpal))*
@@ -29,3 +38,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Set provider: none in tf-checks for validate-only CI
 - Bump required_version to >= 1.10.0
 [v2.0.0]: https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/compare/v1.0.1...v2.0.0
+[v2.0.1]: https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/compare/v2.0.0...v2.0.1
