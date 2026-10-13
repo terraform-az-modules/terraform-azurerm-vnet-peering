@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.1.0] - 2026-10-13
+### :sparkles: New Features
+- [`955fba3`](https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/commit/955fba3db82a05440a8512abb993f542fdbd094c) - single-side peering submodule usable with for_each across subscriptions *(PR [#25](https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/pull/25) by [@clouddrove-ci](https://github.com/clouddrove-ci))*
+
+
 ## [v2.0.1] - 2026-09-22
 ### :bug: Bug Fixes
 - [`e9cf322`](https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/commit/e9cf3224f4acab008bd7cedd511a7ff2c8063967) - declare azurerm.peer as a configuration alias *(PR [#24](https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/pull/24) by [@dverma-cd](https://github.com/dverma-cd))*
@@ -39,3 +44,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bump required_version to >= 1.10.0
 [v2.0.0]: https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/compare/v1.0.1...v2.0.0
 [v2.0.1]: https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/compare/v2.0.0...v2.0.1
+[v2.1.0]: https://github.com/terraform-az-modules/terraform-azurerm-vnet-peering/compare/v2.0.1...v2.1.0
