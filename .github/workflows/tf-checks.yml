@@ -17,6 +17,12 @@ jobs:
       working_directory: './examples/peering_in_diff_subscription/'
       provider: none
 
+  peering_single_side_for_each-example:
+    uses: clouddrove/github-shared-workflows/.github/workflows/smurf-tf-checks.yml@v2
+    with:
+      working_directory: './examples/peering_single_side_for_each/'
+      provider: none
+
   # Seperate Job for TFlint workflow call
   tf-lint:
     uses: clouddrove/github-shared-workflows/.github/workflows/tf-lint.yml@v2
